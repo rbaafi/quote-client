@@ -3,4 +3,6 @@
   <string name="title_home">Home</string>
   <string name="title_quotes">Dashboard</string>
   <string name="title_sources">Notifications</string>
+  <string name="login_failure">Unable able to sign in with provided credentials.</string>
+  <string name="sign_out">sign_out</string>
 </resources>

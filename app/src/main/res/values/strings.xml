@@ -5,4 +5,5 @@
   <string name="title_sources">Notifications</string>
   <string name="login_failure">Unable able to sign in with provided credentials.</string>
   <string name="sign_out">sign_out</string>
+  <string name="unattributed_source">source_unattributed</string>
 </resources>

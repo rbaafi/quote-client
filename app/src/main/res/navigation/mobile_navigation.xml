@@ -22,4 +22,5 @@
     android:label="@string/title_content"
     android:name="edu.cnm.deepdive.quoteclient.controller.ContentFragment"
     tools:layout="@layout/fragment_content"/>
+
 </navigation>

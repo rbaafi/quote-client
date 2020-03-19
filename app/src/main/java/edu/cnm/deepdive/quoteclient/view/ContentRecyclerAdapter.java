@@ -34,7 +34,7 @@ public class ContentRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
     layouts.put(Source.class, R.layout.item_content_source);
     layouts.put(Quote.class, R.layout.item_content_quote);
     holders.put(R.layout.item_content_source, SourceHolder.class);
-    holders.put(R.layout.fragment_random_quote, QuoteHolder.class);
+    holders.put(R.layout.item_content_quote, QuoteHolder.class);
   }
 
   @Override
@@ -78,13 +78,14 @@ public class ContentRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private final TextView sourceName;
 
-    private SourceHolder(@NonNull View itemView) {
+    public SourceHolder(@NonNull View itemView) {
       super(itemView);
       sourceName = itemView.findViewById(R.id.source_name);
     }
 
-    private void bind(int position, Content source) {
-      sourceName.setText(((Source) source).getName());
+    public void bind(int position, Content source) {
+      Source s = (Source) source;
+      sourceName.setText((s.getName() != null) ? s.getName() : "(Unattributed)");
     }
 
   }
@@ -93,12 +94,12 @@ public class ContentRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private final TextView quoteText;
 
-    private QuoteHolder(@NonNull View itemView) {
+    public QuoteHolder(@NonNull View itemView) {
       super(itemView);
       quoteText = itemView.findViewById(R.id.quote_text);
     }
 
-    private void bind(int position, Content quote) {
+    public void bind(int position, Content quote) {
       quoteText.setText(((Quote) quote).getText());
     }
 
